@@ -1,0 +1,90 @@
+<!DOCTYPE >
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulating the DOM</title>
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- HTML Follows BEM naming conventions 
+  IDs are only used for sections to connect menu achors to sections -->
+  <header class="page__header">
+    <nav class="navbar__menu">
+      <!-- Navigation starts as empty UL that will be populated with JS -->
+      <ul id="navbar__list"></ul>
+    </nav>
+  </header>
+  <main>
+    <header class="main__hero">
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul id="myLinks"> </ul>
+      </div>
+      <h1>Landing Page </h1>
+    </header>
+    <!-- Each Section has an ID (used for the anchor) and 
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+   
+    <section id="section1" data-nav="Section 1" class="your-active-class">
+      <div class="landing__container" >
+        <h2>Section 1</h2>
+        <p>Great Sphinx: </p>
+        <p>The Great Sphinx of Giza is a limestone statue of a reclining sphinx, a mythical creature with the head of a human, and the body of a lion. Facing directly from west to east, it stands on the Giza Plateau on the west bank of the Nile in Giza, Egypt. The face of the Sphinx appears to represent the pharaoh Khafre. The original shape of the Sphinx was cut from the bedrock, and has since been restored with layers of limestone blocks.
+          It measures 73 m (240 ft) long from paw to tail, 20 m (66 ft) high from the base to the top of the head and 19 m (62 ft) wide at its rear haunches. Its nose was broken off for unknown reasons between the 3rd and 10th centuries AD.
+         The Sphinx is the oldest known monumental sculpture in Egypt and one of the most recognisable statues in the world. The archaeological evidence suggests that it was created by ancient Egyptians of the Old Kingdom during the reign of Khafre</p>
+      </div>
+    </section>
+
+    <section id="section2" data-nav="Section 2" class="your-active-class">
+      <div class="landing__container">
+        <h2>Section 2</h2>
+        <p>Nefertiti </p>
+        <p>was a queen of the 18th Dynasty of Ancient Egypt, the great royal wife of Pharaoh Akhenaten. Nefertiti and her husband were known for a religious revolution, in which they worshipped solely the sun disc, Aten, as the only god. With her husband, she reigned at what was arguably the wealthiest period of ancient Egyptian history.[4] Some scholars believe that Nefertiti ruled briefly as Neferneferuaten after her husband's death and before the ascension of Tutankhamun, although this identification is a matter of ongoing debate.[5][6] If Nefertiti did rule as Pharaoh, her reign was marked by the fall of Amarna and relocation of the capital back to the traditional city of Thebes.
+          She was made famous by her bust, now in Berlin's Neues Museum. The bust is one of the most copied works of ancient Egypt. It was attributed to the sculptor Thutmose, and it was found in his workshop.</p>
+      </div>
+    </section>
+    <section id="section3" data-nav="Section 3" class="your-active-class">
+      <div class="landing__container">
+        <h2>Section 3</h2>
+        <p>Egyptian pyramids </p>
+        <p>The Egyptian pyramids are ancient masonry structures located in Egypt. Sources cite at least 118 identified "Egyptian" pyramids.Approximately 80 pyramids were built within the Kingdom of Kush, now located in the modern country of Sudan. Of those located in modern Egypt, most were built as tombs for the country's pharaohs and their consorts during the Old and Middle Kingdom periods.
+          The earliest known Egyptian pyramids are found at Saqqara, northwest of Memphis, although at least one step-pyramid-like structure has been found at Saqqara, dating to the First Dynasty: Mastaba 3808, which has been attributed to the reign of Pharaoh Anedjib, with inscriptions, and other archaeological remains of the period, suggesting there may have been others.The otherwise earliest among these is the Pyramid of Djoser built c. 2630–2610 BCE during the Third Dynasty.[7] This pyramid and its surrounding complex are generally considered to be the world's oldest monumental structures constructed of dressed masonry.[8]
+          </p>
+      </div>
+    </section>
+    <section id="section4" data-nav="Section 4" class="your-active-class">
+      <div class="landing__container" >
+        <h2>Section 4</h2>
+        <p>Egyptian Mummies</p>
+        <p>A mummy is a dead human or an animal whose soft tissues and organs have been preserved by either intentional or accidental exposure to chemicals, extreme cold, very low humidity, or lack of air, so that the recovered body does not decay further if kept in cool and dry conditions. Some authorities restrict the use of the term to bodies deliberately embalmed with chemicals, but the use of the word to cover accidentally desiccated bodies goes back to at least 1615 AD (see the section Etymology and meaning).
+           Mummies of humans and animals have been found on every continent, both as a result of natural preservation through unusual conditions, and as cultural artifacts. Over one million animal mummies have been found in Egypt, many of which are cats. Many of the Egyptian animal mummies are sacred ibis, and radiocarbon dating suggests the Egyptian Ibis mummies that have been analyzed were from time frame that falls between approximately 450 and 250 BC.
+           </p>
+      </div>
+    </section>
+
+    <!-- Add a scroll to top button on the page that’s only visible when the user scrolls below the page -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+   
+    <!-- Make sections collapsible -->
+    <button class="collapsible">Section 5</button>
+    <div class="section5">
+      <p> Grand Egyptian Museum </p>
+      <p>also known as the Giza Museum, is an archaeological museum under construction in Giza, Egypt. When inaugurated, the GEM will be the largest archaeological museum in the world. It will house artifacts of ancient Egypt, including the complete Tutankhamun collection; many pieces will be displayed for the first time. </p>
+    </div>
+  
+  </main>
+  <footer class="page__footer">
+    <p>&copy Udacity</p>
+  </footer>
+
+<script src="js/app.js"></script> 
+</body>
+</html>
