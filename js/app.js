@@ -4,9 +4,9 @@ const sections= document.querySelectorAll('section');
 // create function createNavigationBar
 function createNavigationBar(){ 
   sections.forEach((section)=>{
-        createUnorderItem= document.createElement('li');
-        title = section.getAttribute('data-nav'); 
-        url = section.getAttribute('id');
+       const createUnorderItem= document.createElement('li');
+       const title = section.getAttribute('data-nav'); 
+       const url = section.getAttribute('id');
         // Create section link 
         createUnorderItem.innerHTML = `<a class="menu__link" href="#${url}">${title}</a>` 
         createUnorderItem.addEventListener('click',(e)=>{
@@ -21,41 +21,16 @@ function createNavigationBar(){
 }
 createNavigationBar(); 
 
-
-//  make navigation bar responsive in mobile 
-const barHambgureMenu= document.getElementById('myLinks'); // get id(myLinks) from ul tag from html file
-function toggleMobileMenu(menu) {
-     menu.classList.toggle('open');  /// to open the HambgureMenu 
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
-
-  sections.forEach((section)=>{ // create loop for loop on the All-sections
-    unorderList= document.createElement('li'); // create un-order list
-    Name = section.getAttribute('data-nav'); // get data-nav from HTML File
-    Linkofsection = section.getAttribute('id'); // get id from HTML File
-    unorderList.innerHTML = `<a class="menu__link" href="#${Linkofsection}">${Name}</a>` // make unordered list and show sections names and make links
-    unorderList.addEventListener('click',(mobileres)=>{
-      mobileres.preventDefault();
-      section.scrollIntoView({
-       behavior:'smooth',
-      });
-   });
-    barHambgureMenu.appendChild(unorderList); // to put section names to Hambgure Menu in unorderList
-  });
-
   
 // Cheack if Section is Active State and higlighting the link
 function IsActiveSection(section){
-    return section.getBoundingClientRect().top>0 && section.getBoundingClientRect().top<200 ;
+    return section.getBoundingClientRect().top>=0 && section.getBoundingClientRect().top<200 ;
 }
 
 document.addEventListener('scroll',function(){  // event lister when scroll call ActiveState function
   sections.forEach((section)=>{
+    section.classList.remove('your-active-class')
+    const sectiontop= section.getBoundingClientRect().top;
     const ActiveLink = document.querySelector(`a[href="#${section.id}"]`);  
         if (IsActiveSection(section)){
             //if (!section.classList.contains('your-active-class')){
