@@ -64,12 +64,12 @@ function topFunction() {
 
 
 // collapsible section 5
-var collapsible = document.getElementsByClassName("collapsible");
-var i;
+let collapsible = document.getElementsByClassName("collapsible");
+let i;
 for (i = 0; i < collapsible.length; i++) {
   collapsible[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
+    let content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
     } else {
